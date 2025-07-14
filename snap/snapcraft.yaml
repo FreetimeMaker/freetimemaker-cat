@@ -1,0 +1,33 @@
+﻿name: freetimemaker-plc
+base: core24
+version: '1.0.4'
+summary: Clicker but you click Programming Languages
+description: |
+  Like said in the summary, it's a Clicker Game where you have to click on Programming Languages.
+
+grade: stable
+confinement: strict  # 'strict' wird empfohlen, classic ist nicht erlaubt mit core24
+
+parts:
+  freetimemaker-plc:
+    plugin: dump
+    source: snap/local
+    organize:
+      share/applications/freetimemaker-plc.desktop: usr/share/applications/plc.desktop
+      share/icons/hicolor/128x128/apps/freetimemaker-plc.png: meta/gui/plc.png
+
+apps:
+  freetimemaker-plc:
+    command: PLC2.0.x86_64
+    extensions: [gnome]
+    environment:
+      LD_LIBRARY_PATH: "$SNAP/PLC2.0_Data/Plugins/x86_64:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:$LD_LIBRARY_PATH"
+    plugs:
+      - x11
+      - opengl
+      - network
+      - network-bind
+      - audio-playback
+      - joystick
+      - home
+
