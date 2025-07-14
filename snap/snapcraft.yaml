@@ -1,9 +1,9 @@
-﻿name: freetimemaker-plc
+﻿name: freetimemaker-cat
 base: core24
-version: '1.0.4'
-summary: Clicker but you click Programming Languages
+version: '1.0.1'
+summary: Clicker but you click Cats
 description: |
-  Like said in the summary, it's a Clicker Game where you have to click on Programming Languages.
+  Like said in the summary, it's a Clicker Game where you have to click on Cats.
 
 grade: stable
 confinement: strict  # 'strict' wird empfohlen, classic ist nicht erlaubt mit core24
@@ -13,15 +13,15 @@ parts:
     plugin: dump
     source: snap/local
     organize:
-      share/applications/freetimemaker-plc.desktop: usr/share/applications/plc.desktop
-      share/icons/hicolor/128x128/apps/freetimemaker-plc.png: meta/gui/plc.png
+      share/applications/freetimemaker-plc.desktop: usr/share/applications/freetimemaker-cat.desktop
+      share/icons/hicolor/128x128/apps/freetimemaker-plc.png: meta/gui/freetimemaker-cat.png
 
 apps:
   freetimemaker-plc:
-    command: PLC2.0.x86_64
+    command: Cat Clicker.x86_64
     extensions: [gnome]
     environment:
-      LD_LIBRARY_PATH: "$SNAP/PLC2.0_Data/Plugins/x86_64:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:$LD_LIBRARY_PATH"
+      LD_LIBRARY_PATH: "$SNAP/Cat Clicker_Data/Plugins/x86_64:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:$LD_LIBRARY_PATH"
     plugs:
       - x11
       - opengl
